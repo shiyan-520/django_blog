@@ -1,0 +1,59 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ index_information.title }}{% endblock %}
+
+{% block Description %}{{ index_information.Description }}{% endblock %}
+
+{% block name_title %}{{ index_information.title_name }}{% endblock %}
+
+
+{% block body %}
+
+<main class="site-main posts-loop">
+
+    <article>
+    <h3 class="article-title"><span></span></h3>
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="{% url 'yqlj_url' %}" rel="bookmark">
+        <time class="entry-date published" >
+          友情链接
+        </time>
+      </a>
+    </span>
+  </div>
+  <div class="article-content">
+    <div class="entry">
+        <ul>
+            {% for foo in yqlj_context %}
+
+<li><a href="{{ foo.yqlj_urllist }}" target="_blank" rel="noopener">{{ foo.yqlj_name }}</a></li>
+
+            {% endfor %}
+</ul>
+    </div>
+  </div>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+    </div>
+  </div>
+</article>
+
+
+
+ </main>
+{% endblock %}
+
+{% block article_jump %}
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+

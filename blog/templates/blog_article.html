@@ -1,0 +1,48 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ index_information.title }}{% endblock %}
+
+{% block Description %}{{ index_information.Description }}{% endblock %}
+
+{% block name_title %}{{ index_information.title_name }}{% endblock %}
+
+
+{% block body %}
+
+    <main class="site-main posts-loop">
+    <article>
+    <h3 class="article-title"><span>{{ index_body.blog_body_name }}</span></h3>
+  <div class="article-top-meta">
+    <span class="posted-on">
+      <a href="{% url 'blog_Article' index_body.pk %}" rel="bookmark">
+        <time class="entry-date published" >
+          {{ index_body.blog_body_time | date:"Y-m-d H:n:s" }}
+        </time>
+      </a>
+    </span>
+  </div>
+
+  <div class="article-content">
+    <div class="entry">
+       <p> {{ index_body.blog_body_context | safe }}</p>
+    </div>
+  </div>
+  <div class="article-footer">
+    <div class="article-meta pull-left">
+    <span class="post-categories">
+      <i class="icon-categories"></i>
+        <a href="#">{{ index_body.blog_body_type_1 }}</a>
+    </span>
+    <span class="post-tags">
+      <i class="icon-tags"></i>
+        <a href="#">{{ index_body.blog_body_type_2 }}</a>
+    </span>
+    </div>
+  </div>
+</article>
+
+{% endblock %}
+
+{% block article_jump %}
+
+{% endblock %}

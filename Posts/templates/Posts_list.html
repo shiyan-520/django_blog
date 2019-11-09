@@ -1,0 +1,25 @@
+{% extends 'index.html' %}
+
+{% block title %}{{ index_information.title }}{% endblock %}
+
+{% block Description %}{{ index_information.Description }}{% endblock %}
+
+{% block name_title %}{{ index_information.title_name }}{% endblock %}
+
+{% block body %}
+    <br>
+    <br>
+<br>
+<small style="font-size:17px;">在我的技术生涯中，我已经写了......</small>
+<ul>
+        {% for posts_list_div in index_body %}
+      <li style="font-size:17px;">
+          <span>{{ posts_list_div.blog_body_time | date:"Y-m-d H:n:s" }}</span> » <a href="{% url 'blog_Article' posts_list_div.pk %}">{{ posts_list_div.blog_body_name }}</a>
+      </li>
+        {% endfor %}
+</ul>
+{% endblock %}
+
+{% block article_jump %}
+
+{% endblock %}

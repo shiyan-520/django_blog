@@ -1,0 +1,101 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><meta name="generator" content="Hexo 3.8.0">
+
+  <title>{% block title %}{% endblock %}</title>
+
+  <meta name="author" content="shiyan">
+
+  <meta name="description" content="{% block Description %}{% endblock %}">
+
+  <meta id="viewport" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+  <meta property="og:site_name" content="shiyan'blog">
+
+  <meta property="og:image" content="/favicon.ico">
+
+  <link rel="stylesheet" href="{% static 'css/style.css' %}" media="screen" type="text/css">
+<style type="text/css" abt="234"></style><script>//remove baidu search ad
+var _countAA = 0
+function doBBBd(){
+    var alla = document.getElementsByTagName('a')
+    for(var i = 0; i < alla.length; i++){
+        if(/baidu.com\/(baidu.php\?url=|adrc.php\?t)/.test(alla[i].href)){
+            var _temp = alla[i].parentElement, loop = 0
+            while(loop < 5){
+                _temp = _temp.parentElement
+                loop++
+                if(_temp.parentElement.id == 'content_left'){
+                    _temp.remove()
+                    break
+                }
+            }
+        }
+    }
+    
+    if(_countAA++ < 20){
+        setTimeout(doBBBd, 500)
+    }
+    
+}
+doBBBd()
+document.addEventListener('keyup', function(){_countAA-=10;doBBBd()}, false)
+document.addEventListener('click', function(){_countAA-=10;doBBBd()}, false)
+</script></head>
+
+<body>
+<div class="blog">
+  <div class="content">
+
+    <header>
+  <div class="site-branding">
+    <h1 class="site-title">
+      <a href="{% url 'index' %}">{% block name_title %}{% endblock %}</a>
+    </h1>
+    <p class="site-description"></p>
+  </div>
+  <nav class="site-navigation">
+    <ul>
+      
+        <li><a href="{% url 'index' %}">主页</a></li>
+      
+        <li><a href="{% url 'posts_list' %}">归档</a></li>
+      
+        <li><a href="{% url 'blog_About' %}">关于</a></li>
+      
+        <li><a href="{% url 'yqlj_url' %}">友链</a></li>
+      
+        <li><a href="{% url 'rss' %}">订阅</a></li>
+      
+    </ul>
+  </nav>
+</header>
+
+{% block body %}
+
+{% endblock %}
+
+  {% block article_jump %}
+
+  {% endblock %}
+    </main>
+    <footer class="site-footer">
+  <p class="site-info">
+    <a>不要因为走了太久而忘记当初为什么出发。</a>
+    <br>
+    <a>© 2019 shiyan</a>
+    <br>
+  </p>
+</footer>
+<script async="" src="{% static 'js/busuanzi.pure.mini.js' %}"></script>
+<span id="busuanzi_container_site_uv">
+<a>「</a>
+  本站访客数<span id="busuanzi_value_site_uv"></span>人次
+<a>  」</a>
+    
+  </div>
+</div>
+
+</body></html>
