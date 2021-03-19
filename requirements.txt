@@ -1,2 +1,2 @@
 django_ckeditor==5.7.1
-Django==2.2.7
+Django==2.2.18
